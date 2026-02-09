@@ -35,15 +35,20 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="w-7/10 mx-auto justify-center my-10">
-      <div className="card grid grid-cols-2  bg-base-100  ">
+    <div className="w-full lg:w-7/10 mx-auto justify-center my-10">
+      <div className="card  grid grid-cols-1 lg:grid-cols-2  bg-base-100 ">
         <div className="bg-gray-200 shadow-sm">
-          <figure className="h-130 mt-15 mb-10">
+          <figure className=" h-60 lg:h-130 mt-15 mb-10">
             <img className="h-full" src={image} alt={bookName} />
           </figure>
         </div>
-        <div className="card-body">
-          <h2 className="card-title playfair text-5xl">{bookName}</h2>
+        <div className="p-2 lg:card-body">
+          <h2
+            className="card-title playfair text-2xl
+           lg:text-5xl"
+          >
+            {bookName}
+          </h2>
           <p className="my-4">by : {author}</p>
           <div className="border-b"></div>
           <p>

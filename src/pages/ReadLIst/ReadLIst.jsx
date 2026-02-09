@@ -33,7 +33,10 @@ const ReadLIst = () => {
   };
 
   return (
-    <div className="w-3/4 mx-auto my-20">
+    <div className="w-full lg:w-3/4 mx-auto my-10 p-2">
+      <h2 className="text-2xl rounded-xl text-gray-700 font-bold text-center block bg-gray-200 py-5 my-5">
+        Books I read
+      </h2>
       <Tabs>
         <TabList>
           <Tab>ReadList</Tab>
@@ -41,7 +44,7 @@ const ReadLIst = () => {
         </TabList>
 
         <TabPanel>
-          <div className="dropdown dropdown-start flex justify-center ">
+          <div className="dropdown dropdown-start flex lg:justify-center ">
             <div
               tabIndex={0}
               role="button"
@@ -61,37 +64,36 @@ const ReadLIst = () => {
               </li>
             </ul>
           </div>
-          <h2>Book I read</h2>
 
           {readList.map((book) => (
             <div
-              className="card h-70 card-side card-border my-4 bg-slate-100 text-gray-500 p-6"
+              className="card  lg:h-70 lg:card-side card-border my-4 bg-slate-100 text-gray-500 p-1 lg:p-6"
               key={book.bookId}
             >
-              <figure className="h-full mr-3 p-5 bg-slate-200 rounded-lg">
+              <figure className="h-50 lg:h-full lg:mr-3 p-1 lg:p-5 bg-slate-200 rounded-lg">
                 <img className="h-full" src={book.image} alt={book.bookName} />
               </figure>
-              <div className="flex flex-col justify-center gap-3">
-                <p className="text-2xl playfair font-bold text-gray-700">
+              <div className="flex flex-col items-center lg:items-start justify-center text-xs lg:text-base lg:gap-3">
+                <p className="text-lg lg:text-2xl playfair font-bold text-gray-700">
                   {book.bookName}
                 </p>
                 <p className="font-medium text-gray-600">By : {book.author}</p>
-                <p className="flex">
+                <p className="flex my-1">
                   {" "}
-                  <span className="flex justify-around mr-3 ">
-                    <BsPeople className="text-xl mr-2" />
+                  <span className="flex justify-around mr-1 lg:mr-3 ">
+                    <BsPeople className="text-base lg:text-xl mr-2" />
                     Publisher : {book.publisher}
                   </span>{" "}
                   <span className="flex justify-around">
-                    <LuFileSpreadsheet className="text-xl mr-2" />
+                    <LuFileSpreadsheet className="text-base lg:text-xl mr-1 lg:mr-2" />
                     Page : {book.totalPages}{" "}
                   </span>
                 </p>
-                <p className="flex gap-3 text-gray-700">
+                <p className="flex gap-1 my-1 lg:gap-3 text-gray-700">
                   <b>Tag</b> :{" "}
                   {book.tags.map((tag) => (
                     <span
-                      className=" font-normal text-emerald-600 bg-emerald-100 mr-2 text-xs rounded p-1"
+                      className=" font-normal text-emerald-600 bg-emerald-100 lg:mr-2 text-xs rounded p-1"
                       key={tag}
                     >
                       {tag}
@@ -99,15 +101,15 @@ const ReadLIst = () => {
                   ))}
                   <span>Year of publishing : {book.yearOfPublishing}</span>
                 </p>
-                <p>
+                <p className="my-1 lg:my-0">
                   {" "}
-                  <span className=" text-amber-700 bg-amber-100 mr-2 text-xs rounded-lg p-2">
+                  <span className=" text-amber-700 bg-amber-100 mr-2 text-xs rounded lg:rounded-lg p-1 lg:p-2">
                     Rating: {book.rating}
                   </span>
-                  <span className=" text-blue-700 bg-blue-100 mr-2 text-xs rounded-xl p-2">
+                  <span className=" text-blue-700 bg-blue-100 mr-2 text-xs rounded lg:rounded-xl p-1 lg:p-2">
                     Catergory : {book.category}
                   </span>
-                  <span className="bg-green-500 p-2 rounded-xl text-xs text-white">
+                  <span className="bg-green-500 p-1 lg:p-2 rounded lg:rounded-xl text-xs text-white">
                     <a href="#">View details</a>
                   </span>
                 </p>

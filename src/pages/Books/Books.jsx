@@ -12,7 +12,7 @@ const Books = ({ data }) => {
   // const bookPromise = fetch("./booksData.json").then((res) => res.json());
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-6/8 mx-auto gap-8 my-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full p-2 lg:w-6/8 mx-auto gap-2 lg:gap-8 my-5 lg:my-10">
       <Suspense fallback={<div>Loading...</div>}>
         {data.map((singleBook) => (
           <Book key={singleBook.bookId} singleBook={singleBook}></Book>
