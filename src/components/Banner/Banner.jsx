@@ -1,9 +1,10 @@
 import React from "react";
 import bookImg from "../../assets/books.jpg";
+import { Link } from "react-router";
 const Banner = () => {
   return (
     <div className="w-full lg:w-3/4 mx-auto p-2">
-      <div className="hero bg-stone-200 min-h-70 p-2 lg:p-10 my-10 rounded-2xl">
+      <div className="hero bg-stone-200 min-h-70 p-2 lg:p-10 mt-10 rounded-2xl">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={bookImg}
@@ -15,7 +16,7 @@ const Banner = () => {
             </h1>
 
             <button className="btn bg-emerald-500 text-gray-50">
-              View The List
+              <Link to="/readlist">View The List</Link>
             </button>
           </div>
         </div>

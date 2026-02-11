@@ -34,40 +34,39 @@ const ReadLIst = () => {
 
   return (
     <div className="w-full lg:w-3/4 mx-auto my-10 p-2">
-      <h2 className="text-2xl rounded-xl text-gray-700 font-bold text-center block bg-gray-200 py-5 my-5">
+      <h2 className="text-2xl rounded-xl text-gray-900 font-bold text-center block bg-gray-500 py-5 my-5">
         Books I read
       </h2>
+      <div className="dropdown dropdown-start my-5 lg:my-10 flex lg:justify-center ">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn btn-success text-gray-700 mx-auto"
+        >
+          Sort by: {sort ? sort : ""}
+        </div>
+        <ul
+          tabIndex="-1"
+          className="dropdown-content menu bg-gray-100 mt-12   text-gray-700 rounded-box z-1 w-52 p-2 shadow-sm"
+        >
+          <li>
+            <a onClick={() => handleSort("pages")}>Pages</a>
+          </li>
+          <li>
+            <a onClick={() => handleSort("ratings")}>Ratings</a>
+          </li>
+        </ul>
+      </div>
       <Tabs>
-        <TabList>
+        <TabList className="bg-gray-200 border-0 text-gray-800 p-2 rounded-lg">
           <Tab>ReadList</Tab>
           <Tab>WishList</Tab>
         </TabList>
 
         <TabPanel>
-          <div className="dropdown dropdown-start flex lg:justify-center ">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-success text-gray-700 mx-auto"
-            >
-              Sort by: {sort ? sort : ""}
-            </div>
-            <ul
-              tabIndex="-1"
-              className="dropdown-content menu bg-gray-100 mt-12   text-gray-700 rounded-box z-1 w-52 p-2 shadow-sm"
-            >
-              <li>
-                <a onClick={() => handleSort("pages")}>Pages</a>
-              </li>
-              <li>
-                <a onClick={() => handleSort("ratings")}>Ratings</a>
-              </li>
-            </ul>
-          </div>
-
           {readList.map((book) => (
             <div
-              className="card  lg:h-70 lg:card-side card-border my-4 bg-slate-100 text-gray-500 p-1 lg:p-6"
+              className="card  lg:h-60 lg:card-side card-border my-4 bg-slate-100 text-gray-500 p-1 lg:p-6"
               key={book.bookId}
             >
               <figure className="h-50 lg:h-full lg:mr-3 p-1 lg:p-5 bg-slate-200 rounded-lg">
@@ -89,7 +88,7 @@ const ReadLIst = () => {
                     Page : {book.totalPages}{" "}
                   </span>
                 </p>
-                <p className="flex gap-1 my-1 lg:gap-3 text-gray-700">
+                <p className="flex gap-1 my-1 lg:gap-2 text-gray-700">
                   <b>Tag</b> :{" "}
                   {book.tags.map((tag) => (
                     <span
