@@ -72,27 +72,27 @@ const ReadLIst = () => {
               <figure className="h-50 lg:h-full lg:mr-3 p-1 lg:p-5 bg-slate-200 rounded-lg">
                 <img className="h-full" src={book.image} alt={book.bookName} />
               </figure>
-              <div className="flex flex-col items-center lg:items-start justify-center text-xs lg:text-base lg:gap-3">
-                <p className="text-lg lg:text-2xl playfair font-bold text-gray-700">
+              <div className="flex flex-col items-center lg:items-start justify-center text-xs lg:text-base lg:gap-2">
+                <p className="text-xl my-2 lg:my-1 text-center lg:text-lef lg:text-2xl playfair font-bold text-gray-700">
                   {book.bookName}
                 </p>
                 <p className="font-medium text-gray-600">By : {book.author}</p>
                 <p className="flex my-1">
                   {" "}
-                  <span className="flex justify-around mr-1 lg:mr-3 ">
-                    <BsPeople className="text-base lg:text-xl mr-2" />
+                  <span className="flex  align-items-center justify-center mr-2 lg:mr-3 ">
+                    <BsPeople className="text-sm lg:text-xl mr-1 lg:mr-2" />
                     Publisher : {book.publisher}
                   </span>{" "}
                   <span className="flex justify-around">
-                    <LuFileSpreadsheet className="text-base lg:text-xl mr-1 lg:mr-2" />
+                    <LuFileSpreadsheet className="text-sm lg:text-xl mr-1 lg:mr-2" />
                     Page : {book.totalPages}{" "}
                   </span>
                 </p>
-                <p className="flex gap-1 my-1 lg:gap-2 text-gray-700">
+                <p className="flex gap-1 my-1 lg:my-0 p-1 lg:gap-2 text-gray-700">
                   <b>Tag</b> :{" "}
                   {book.tags.map((tag) => (
                     <span
-                      className=" font-normal text-emerald-600 bg-emerald-100 lg:mr-2 text-xs rounded p-1"
+                      className=" font-normal text-emerald-600 bg-emerald-100 lg:p-1 lg:mr-1 text-xs rounded"
                       key={tag}
                     >
                       {tag}
@@ -100,7 +100,7 @@ const ReadLIst = () => {
                   ))}
                   <span>Year of publishing : {book.yearOfPublishing}</span>
                 </p>
-                <p className="my-1 lg:my-0">
+                <p className=" mb-3 lg:my-1">
                   {" "}
                   <span className=" text-amber-700 bg-amber-100 mr-2 text-xs rounded lg:rounded-lg p-1 lg:p-2">
                     Rating: {book.rating}
